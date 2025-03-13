@@ -1,10 +1,84 @@
+<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LomakkeenValidointi</title>
+    <title>Lomake</title>
+    <style>
+        .error { color: red; font-size: 14px; }
+        .error-border { border: 2px solid red; }
+
+        body {
+            margin-left: 40px;
+            font-size: 20px;
+        }
+
+        button {
+        margin: 20px auto; /* Automaattinen keskitys vaakasuunnassa */
+        margin-left: 80px;
+        padding: 5px 30px; /* Lisää tilaa painikkeen sisään */
+        font-size: 24px; /* Suurempi fontti */
+        background-color: #999999; /* Sininen tausta */
+        color: rgb(255, 255, 255); /* Valkoinen teksti */
+        border: none; /* Ei reunaviivaa */
+        border-radius: 8px; /* Pyöristetyt kulmat */
+        cursor: pointer; /* Kursoriksi osoitin */
+        transition: background-color 0.3s ease;
+        }
+        button:hover {
+        background-color: #000000; /* Tummempi sininen hoverilla */
+        }
+    </style>
 </head>
 <body>
-    
+    <h2>Rekisteröitymislomake</h2>
+    <p><strong>Siirry kentästä toiseen tab-näppäimellä.</strong></p>
+    <form id="form">
+        <label for="name">Nimi:</label>
+        <input type="text" id="name">
+        <div id="nameError" class="error"></div>
+
+        <label for="address">Osoite:</label>
+        <input type="text" id="address">
+        <div id="addressError" class="error"></div>
+
+        <label for="country">Maa:</label>
+        <select id="country">
+            <!-- Paikka, johon maat lisätään dynaamisesti -->
+        </select>
+        <div id="countryError" class="error"></div>
+
+        <label>Sukupuoli:</label>
+        <input type="radio" name="gender" value="Mies"> Mies
+        <input type="radio" name="gender" value="Nainen"> Nainen
+        <input type="radio" name="gender" value="Ei kerro"> En halua kertoa
+        <div id="genderError" class="error"></div>
+
+        <label>Kieli:</label>
+        <input type="radio" name="language" value="Suomi"> Suomi
+        <input type="radio" name="language" value="Muu"> Muu kuin suomi
+        <div id="languageError" class="error"></div>
+
+        <label for="userId">Käyttäjä ID:</label>
+        <input type="text" id="userId">
+        <div id="userIdError" class="error"></div>
+
+        <label for="password">Salasana:</label>
+        <input type="password" id="password">
+        <div id="passwordError" class="error"></div>
+
+        <label for="email">Sähköposti:</label>
+        <input type="text" id="email">
+        <div id="emailError" class="error"></div>
+
+        <label for="postalCode">Postinumero:</label>
+        <input type="text" id="postalCode">
+        <div id="postalCodeError" class="error"></div>
+
+        <button type="submit">Lähetä</button>
+    </form>
+
+    <script src="main.js"></script>
 </body>
 </html>
+
